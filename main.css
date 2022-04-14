@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@font-face {
+  font-family: 'unifont';
+  src: url(fonts/unifont.woff2);
+}
 body{
   background-color: black;
 }
 #heading{
-  font-family: 'Righteous', cursive;
-  font-size: 5.2vw;; 
+/*  font-family: 'Righteous', cursive;
+*/  font-family: 'Press Start 2P', cursive;
+  font-size: 44px;
   color: white;
   margin: 0%;
 }
@@ -12,14 +19,14 @@ body{
   font-size: 200%;
   margin-top: 0.2%;
   margin-bottom: 0%;
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: 'unifont';
   font-size: 2.2vw;
   color: white;
 
 }
 #red{
     color: rgb(32, 99, 15);
-    font-family: 'Ubuntu Mono', monospace;
+    font-family: 'unifont';
     font-size: 1.5vw;
     margin: 0%;
 }
