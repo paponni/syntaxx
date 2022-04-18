@@ -45,16 +45,16 @@
 <p>So let's try to execute the program and see what happend :</p>
 <br><img src="./imgs/2.png" alt="">
 <p>we're asked to enter a password ,but we get Nop, incorrect password we should find the correct password.</p>
-<p>so if try to run it with ltrace</p>
+<p>so if try to run it with <code>ltrace</code></p>
 <img src="./imgs/3.png" alt="">
-<p>Sometimes if there's a string compare being there we will able to enter a input and we would see what actually being compared, but this case nothing done here </p>
-<p>let's run strings and see if the expected input sitting there somewhere.</p>
+<p>Sometimes if there's a string compare being there we will able to enter a input and we would see what actually being compared, but in this case nothing done here .</p>
+<p>let's run <code>strings</code> and see if the expected input sitting there somewhere.</p>
 <img src="./imgs/4.png" alt="">
-<p>and we see a thnb{%s} here and some other stuff.</p>
+<p>and we see a thnb{%s} here and some other stuffs.</p>
 <h2 id="nmap">GHIDRA</h2>
-<p>So let's run ghidra to take a look at the assembly and decompiled code and get better idea what going on.</p>
+<p>So let's run <code>ghidra</code> to take a look at the assembly and decompiled code and get better idea what going on.</p>
 <img src="./imgs/5.png" alt="">
-<p>And we can see that we have boucle and for each character in "s3cure_p4ss" we make a character operation ,we substract 10 </p>
+<p>And we can see that we have boucle and for each character in "s3cure_p4ss" we make a character operation ,we substract 10. </p>
 <p>so to be able to get the password and make the flag being displayed , we should create a script do that for us.</p>
 <img src="./imgs/6.png" alt="">
 <p>Let’s run the program:</p>
