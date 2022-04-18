@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+
+<meta name="theme-color" content="#151515">
+<meta name="msapplication-navbutton-color" content="#151515">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>Syntaxx Writeup | writeups</title>
+
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="#">
+          <h1>writeup</h1>
+        </a>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <small>17 April 2022</small>
+<h1>Toddler Writeup</h1>
+
+<h4 align="center">
+  CTF By <a href="#" target="_blank">Jakom</a>
+<br />
+</h4>
+
+<hr />
+
+<h2 id="launch">Toddler</h2>
+<p>In this write-up ,we're going take a look at Toddler reverse engineering challenge . we were given a binary file . <br />
+ <br> <img src="./imgs/1.png" alt="">
+<p>So let's try to execute the program and see what happend :</p>
+<br><img src="./imgs/2.png" alt="">
+<p>we're asked to enter a password ,but we get Nop, incorrect password we should find the correct password.</p>
+<p>so if try to run it with ltrace</p>
+<img src="./imgs/3.png" alt="">
+<p>Sometimes if there's a string compare being there we will able to enter a input and we would see what actually being compared, but this case nothing done here </p>
+<p>let's run strings and see if the expected input sitting there somewhere.</p>
+<img src="./imgs/4.png" alt="">
+<p>and we see a thnb{%s} here and some other stuff.</p>
+<h2 id="nmap">GHIDRA</h2>
+<p>So let's run ghidra to take a look at the assembly and decompiled code and get better idea what going on.</p>
+<img src="./imgs/5.png" alt="">
+<p>And we can see that we have boucle and for each character in "s3cure_p4ss" we make a character operation ,we substract 10 </p>
+<p>so to be able to get the password and make the flag being displayed , we should create a script do that for us.</p>
+<img src="./imgs/6.png" alt="">
+<p>Let’s run the program:</p>
+<img src="./imgs/7.png" alt="">
+<p>Here is the flag.</p>
+<img src="./imgs/8.png" alt="">
+
+
+<hr />
+
+<hr />
+<p align="center">Written by syntaxx</p>
+      </section>
+    </div>
+  </body>
+</html>
